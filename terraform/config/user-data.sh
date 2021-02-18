@@ -44,10 +44,10 @@ apt-get update && apt-get install filebeat
 #Determine the latest version number
 echo "$(date +'%b %d %T'): installing Velociraptor" >> /home/ubuntu/dh-install.log
 cd /opt
-RELEASE=$(curl -s https://api.github.com/repos/Velocidex/velociraptor/releases/latest \
-| grep "tag_name" \
-| awk '{print substr($2, 2, length($2)-3)}') 
-
+# RELEASE=$(curl -s https://api.github.com/repos/Velocidex/velociraptor/releases/latest \
+# | grep "tag_name" \
+# | awk '{print substr($2, 2, length($2)-3)}') 
+RELEASE="0.5.5-1"
 #Download the latest release of Velociraptor
 wget https://github.com/Velocidex/velociraptor/releases/download/$RELEASE/velociraptor-$RELEASE-linux-amd64
 chmod +x velociraptor-$RELEASE-linux-amd64
